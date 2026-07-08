@@ -94,6 +94,10 @@
   }
 
   .reveal{
+    opacity:1;
+    transform:none;
+  }
+  .reveal.pre-reveal{
     opacity:0;
     transform:translateY(28px);
     transition:opacity 0.8s ease, transform 0.8s ease;
@@ -893,17 +897,38 @@
     });
   });
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
+  // Scroll reveal (content is visible by default; this only adds a subtle
+  // entrance animation where supported, and can never hide content if it fails)
+  try {
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach(el => el.classList.add('pre-reveal'));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          entry.target.classList.remove('pre-reveal');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Safety net: force-reveal anything still hidden after 2.5s, in case the
+    // observer never fires on a particular device/browser
+    setTimeout(() => {
+      document.querySelectorAll('.reveal.pre-reveal').forEach(el => {
+        el.classList.add('in-view');
+        el.classList.remove('pre-reveal');
+      });
+    }, 2500);
+  } catch (err) {
+    // If anything above fails, make sure nothing stays hidden
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.remove('pre-reveal');
+      el.classList.add('in-view');
     });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
+  }
 
   // Mailto quote form
   document.getElementById('quoteForm').addEventListener('submit', function(e){
