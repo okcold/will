@@ -458,6 +458,12 @@
     grid-column:span 2;
     grid-row:span 1;
   }
+  .gallery-grid .g-panorama{
+    grid-column:1 / -1;
+    grid-row:span 1;
+    aspect-ratio:3.15/1;
+    height:auto;
+  }
   @media (max-width:860px){
     .gallery-grid{grid-template-columns:repeat(2, 1fr); grid-auto-rows:130px;}
   }
@@ -469,6 +475,7 @@
       grid-row:span 1;
     }
     .gallery-grid .photo-frame{aspect-ratio:4/3; height:auto;}
+    .gallery-grid .g-panorama{aspect-ratio:3.15/1; height:auto;}
   }
   .photo-frame{
     border-radius:2px;
@@ -747,7 +754,7 @@
         <p class="eyebrow">About Me</p>
         <p>I grew up in the Cotswolds, surrounded by beautiful architecture and stone buildings. Spending time as a child in and out of listed buildings and churches I naturally grew a fascination with these. As my stepfather got closer to retirement I was honoured to take on the family business.</p>
         <p>Years of working alongside my stepfather taught me the art of traditional roofing. Today, I combine those time-honored restoration skills with modern materials for roofs that are built to last without losing their classic character.</p>
-        <p>Every roof has its unique history. That's why I approach every job with creative problem-solving, adapting my methods to match the specific needs of your property.</p>
+        <p>I believe every building has its own story. That's why I take the time to understand each property and the people who care for it, tailoring my approach to suit individual needs.</p>
       </div>
       <div class="photo-frame about-photo">
         <img src="photo-02.jpg" alt="William Armstrong on the beach with his dog">
@@ -763,7 +770,7 @@
         <div class="photo-frame g-wide"><img data-caption="Cotswold stone Family Farm house" src="photo-03.jpg" alt="Cotswold stone Family Farm house"></div>
         <div class="photo-frame g-wide"><img data-caption="Cotswold stone roof with lime works on dormer window and chimneys" src="photo-04.jpg" alt="Cotswold stone roof with lime works on dormer window and chimneys"></div>
         <div class="photo-frame g-square"><img data-caption="Cotswold stone dormer window with lime works" src="photo-05.jpg" alt="Cotswold stone dormer window with lime works"></div>
-        <div class="photo-frame g-wide"><img data-caption="Roof valley repair progression: before, during and after" src="photo-06.jpg" alt="Roof valley repair progression: before, during and after"></div>
+        <div class="photo-frame g-panorama"><img data-caption="Roof valley repair progression: before, during and after" src="photo-06.jpg" alt="Roof valley repair progression: before, during and after"></div>
         <div class="photo-frame g-square"><img data-caption="Cotswold stone roof with chimney stack" src="photo-07.jpg" alt="Cotswold stone roof with chimney stack"></div>
         <div class="photo-frame g-square"><img data-caption="Imitation Cotswold stone roof battens ready for tiling" src="photo-08.jpg" alt="Imitation Cotswold stone roof battens ready for tiling"></div>
         <div class="photo-frame g-wide"><img data-caption="Completed Imitation Cotswold stone roof" src="photo-09.jpg" alt="Completed Imitation Cotswold stone roof"></div>
@@ -791,8 +798,62 @@
         <div class="photo-frame g-wide"><img data-caption="Cotswold stone roof with swept valley" src="photo-31.jpg" alt="Cotswold stone roof with swept valley"></div>
         <div class="photo-frame g-wide"><img data-caption="Two-tone Cotswold stone slate roof detail" src="photo-32.jpg" alt="Two-tone Cotswold stone slate roof detail"></div>
         <div class="photo-frame g-wide"><img data-caption="Chimney lead flashing on a Cotswold stone roof" src="photo-33.jpg" alt="Chimney lead flashing on a Cotswold stone roof"></div>
-        <div class="photo-frame g-wide"><img data-caption="Before and after: Imitation Cotswold stone re-roof with solar panels" src="photo-34.jpg" alt="Before and after: Imitation Cotswold stone re-roof with solar panels"></div>
+        <div class="photo-frame g-panorama"><img data-caption="Before and after: Imitation Cotswold stone re-roof with solar panels" src="photo-34.jpg" alt="Before and after: Imitation Cotswold stone re-roof with solar panels"></div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="services reveal" id="services">
+    <div class="wrap">
+      <h2>Roofing services across the Cotswolds, from repairs to full re-roofs.</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <span class="num">01</span>
+          <h3>New re-roof — modern and traditional</h3>
+          <p>Full re-roofing using either traditional Cotswold stone slate or modern roofing materials, to suit your property and budget.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">02</span>
+          <h3>Repairs and maintenance</h3>
+          <p>Slipped or cracked tiles, general upkeep and ongoing maintenance as well as patch repair to keep your roof in good condition.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">03</span>
+          <h3>Lead work</h3>
+          <p>Flashing, valleys and lead detailing, fitted and repaired to a high standard.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">04</span>
+          <h3>Listed building conservation</h3>
+          <p>Sympathetic work that respects conservation area requirements and listed building consent.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">05</span>
+          <h3>Moss, lichen removal</h3>
+          <p>Gentle cleaning and clearing for cosmetic or functional requirements.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">06</span>
+          <h3>Guttering replacement/repair</h3>
+          <p>Replacing or repairing guttering.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">07</span>
+          <h3>Roof surveying services</h3>
+          <p>A thorough inspection and honest report on the condition of your roof, with no obligation.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">08</span>
+          <h3>Insurance/storm damage works</h3>
+          <p>Storm and weather damage assessed and repaired, with support through the insurance claims process.</p>
+        </div>
+        <div class="service-card">
+          <span class="num">09</span>
+          <h3>Emergency call out</h3>
+          <p>Urgent work, call me directly on 07899941251.</p>
+        </div>
       </div>
     </div>
   </section>
